@@ -42,7 +42,7 @@
     "character":{
       "templates": ["base"]
     },
-    "npc":{}
+    "npc":["base"]
   },
   "Item":{}
 }

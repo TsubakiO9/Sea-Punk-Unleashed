@@ -19,7 +19,7 @@ export class SPUActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/spu/templates/actor/actor-${this.actor.data.type}-sheet.html`;
+    return `systems/spu/templates/sheets/actor-${this.actor.data.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
