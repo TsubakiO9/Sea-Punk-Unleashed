@@ -1,4 +1,4 @@
-import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
+import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
