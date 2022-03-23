@@ -1,19 +1,17 @@
 export const spu = {};
 
-spu.abilities = {
-    "str": "spu.AbilityStr",
-    "dex": "spu.AbilityDex",
-    "con": "spu.AbilityCon",
-    "int": "spu.AbilityInt",
-    "wis": "spu.AbilityWis",
-    "cha": "spu.AbilityCha"
+spu.atributos = {
+    "fue": "spu.AtributoFue",
+    "din": "spu.AtributoDin",
+    "vol": "spu.AtributoVol",
+    "int": "spu.AtributoInt",
+    "sue": "spu.AtributoSue"
   };
   
-  spu.abilityAbbreviations = {
-    "str": "spu.AbilityStrAbbr",
-    "dex": "spu.AbilityDexAbbr",
-    "con": "spu.AbilityConAbbr",
-    "int": "spu.AbilityIntAbbr",
-    "wis": "spu.AbilityWisAbbr",
-    "cha": "spu.AbilityChaAbbr"
+  spu.atributoAbbreviations = {
+    "fue": "spu.AtributoFueAbbr",
+    "din": "spu.AtributoDinAbbr",
+    "vol": "spu.AtributoVolAbbr",
+    "int": "spu.AtributoIntAbbr",
+    "sue": "spu.AtributoSueAbbr",
   };
