@@ -43,5 +43,6 @@
       "templates": ["base"]
     },
     "PNJ":{}
-  }
+  },
+  "Item":{}
 }
