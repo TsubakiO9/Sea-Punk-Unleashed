@@ -6,8 +6,8 @@
     "minimumCoreVersion": "9",
     "compatibleCoreVersion":"9",
     "author": "Tsubaki",
-    "esmodules": ["module/spu.js"],
-    "styles": ["spu.css"],
+    "esmodules": ["./module/spu.js"],
+    "styles": ["./css/spu.css"],
     "languages": [
       {
         "lang": "en",
