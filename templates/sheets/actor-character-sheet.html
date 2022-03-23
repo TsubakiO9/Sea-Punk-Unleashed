@@ -1,25 +1,227 @@
-<form class="actor-sheet {{cssClass}}" autocomplete="off">
+form class="{{cssClass}}" autocomplete="off" id="sheet">
+    {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
-        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        <img class="profile-img" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" height="100" width="100"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" class="entityname" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            <div class="flexblock-left charsetup">
+                <div class="col-1-2">
+                    {{#if actor.data.istemplate}}
+                    {{else}}
+                    <div class="flexblock-left">
+
+                        {{#advShow}}
+                        <a class="roll-mode boldtext" title="Roll mode"><i>{{data.data.rollmode}}</i></a>
+                        {{/advShow}}
+
+                        {{#showRoller}}
+                        <a class="roll-free" title="Roll mode"><i class="fas fa-dice-d20"></i></a>
+                        {{/showRoller}}
+
+                        {{#if actor.data.selector}}
+                        <a class="mod-selector" title="Select Options"><i class="fas fa-exclamation-circle fa-2x"></i></a>
+                        {{/if}}
+
+                        {{#rollMod}}
+                        <label class="label-mod">MOD</label>
+                        <input class="input-mod" type="text" name="data.mod" value="{{data.data.mod}}"/>
+                        {{/rollMod}}
+
+                    </div>
+                    {{/if}}
+                </div>
+
+                <div class="rightblock gmsetup">
+                    {{#if actor.data.istemplate}}
+                    {{else}}
+                    {{#isGM}}
+                    <a class="sheet-reload" title="Reload Template"><i class="fas fa-arrow-alt-circle-down fa-2x"></i></a>
+                    <select  class="selectsheet"  name="data.gtemplate"  data-type="String">
+                    </select>
+                    {{/isGM}}
+                    {{/if}}
+                    {{#isGM}}
+
+
+                    <h3 class="rightblock-element">Template</h3>
+                    <input class="check-istemplate" name="data.istemplate" id="check-istemplate" type="checkbox" {{checked actor.data.istemplate}}/>
+
+
+                    {{/isGM}}
+
+                    {{#if actor.data.istemplate}}
+                    <h3 class="rightblock-element-tag">Rebuild Sheet</h3>
+                    <a class="rightblock-element item-refresh" title="Rebuild Sheet"><i class="fas fa-sync"></i></a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
     </header>
-    <p>hla</p>
-    <section class="items">
-        <h3>Owned Items</h3>
-        <ol class="actor-items">
-        {{#each actor.items as |item id|}}
-            <li class="actor-item" data-item-id="{{id}}">
-                <div class="item-name">
-                  <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                    <h4>{{item.name}}</h4>
+
+    {{!-- Sheet Tab Navigation --}}
+    <div class="atabs">
+        <a class="tab-prev" id="tab-prev"><i class="leftarrow"></i></a>
+        <nav class="sheet-tabs tabs" data-group="primary" id="tabs" tabs="0">
+
+            <a class="item tab-button player-tab desc-tab" data-tab="description" id="tab-0">Bio</a>          
+            <a style="display: none" id="tab-last"></a>
+            {{#isGM}}
+            {{#if actor.data.istemplate}}
+            <a class="item tab-button" data-tab="token" id="tab-token">Config</a>
+            <a class="item tab-button" data-tab="config" id="tab-tabs">Tabs</a>
+            {{/if}}
+            <a class="item tab-button" data-tab="citems" id="tab-citems">cItems</a>
+            {{/isGM}}
+
+        </nav>
+        <a class="tab-next" id="tab-next"><i class="rightarrow"></i></a>
+    </div>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body" id="sheet-body">
+
+        {{!-- Biography Tab --}}
+        <div class="tab biography active scrollable" data-group="primary" data-tab="description">
+            {{editor content=data.data.biography target="data.biography" button=true owner=owner editable=editable}}
+        </div>
+
+        {{#if actor.data.istemplate}}
+        {{!-- SheetTabs Tab --}}
+        <div class="tab properties" data-group="primary" data-tab="config">
+            <ol class="properties-list">
+                {{#each data.data.tabs as |tab id|}}
+                <li class="property flexrow" data-item-id="{{id}}">
+                    <h4 class="property-name">{{tab.name}}</h4>
+                    <div class="property-row">
+                        <a class="property-controls item-top" title="Top Item"><i class="fas fa-arrow-alt-circle-up"></i></a>
+                        <a class="property-controls item-bottom" title="Bottom Item"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                        <a class="property-control item-edit" title="Edit Tab"><i class="fas fa-edit"></i></a>
+                        <a class="property-control item-delete" title="Delete Tab"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+        {{!-- Config Tab --}}
+        <div class="tab token scrollable" data-group="primary" data-tab="token">
+            <div class="flexblock">
+                <div class="col-1-2">
+                    <div class="new-row">
+                        <div class="panelheader">
+                            <label class="label-medlarge">TOKEN OPTIONS</label>
+                        </div>
+                    </div>
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Bar 1</label>
+                            <input class ="token-bar1" type="text" name="data.tokenbar1" value="{{data.data.tokenbar1}}"/>
+                        </div>
+                    </div>
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Shield Stat</label>
+                            <input class ="token-shieldstat" type="text" name="data.shieldstat" value="{{data.data.shieldstat}}"/>
+                        </div>
+                    </div>
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Display Name</label>
+                            <select  class ="token-displayName" name="data.displayName"  data-type="String">
+                                {{#select data.data.displayName}}
+                                <option  value="NONE">NONE</option>
+                                <option  value="CONTROL">CONTROL</option>
+                                <option  value="OWNER_HOVER">OWNER HOVER</option>
+                                <option  value="HOVER">HOVER</option>
+                                <option  value="OWNER">OWNER</option>
+                                <option  value="ALWAYS">ALWAYS</option>
+                                {{/select}}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="new-row">
+                        <div class="panelheader">
+                            <label class="label-medlarge">TAB OPTIONS</label>
+                        </div>
+
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">BIO Tab Visible</label>
+                            <input class="check-biovisible" name="data.biovisible" id="check-biovisible" type="checkbox" biovisible="false" {{checked actor.data.biovisible}}/>
+                        </div>
+
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Max visible Tabs</label>
+                            <select  class ="token-visitabs" name="data.visitabs"  data-type="String">
+                                {{#select data.data.visitabs}}
+                                <option  value="2">2</option>
+                                <option  value="3">3</option>
+                                <option  value="4">4</option>
+                                <option  value="5">5</option>
+                                {{/select}}
+                            </select>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="item-controls">
-                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                <div class="col-1-2">
+                    <div class="new-row">
+                        <div class="panelheader">
+                            <label class="label-medlarge">SHEET STYLES</label>
+                        </div>
+                    </div>
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Background</label>
+                            <input class ="gsheet-backg" type="text" name="data.backg" value="{{data.data.backg}}"/>
+                        </div>
+                    </div>
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Height</label>
+                            <input class ="gsheet-setheight" type="text" name="data.setheight" value="{{data.data.setheight}}"/>
+                        </div>
+                    </div>
+                    <div class="new-row">
+                        <div class="flexblock-left">
+                            <label class="label-medlarge">Resizable</label>
+                            <input class="check-resizable" name="data.resizable" id="check-resizable" type="checkbox" resizable="false" {{checked actor.data.resizable}}/>
+                        </div>
+                    </div>
+
                 </div>
-            </li>
-        {{/each}}
-        </ol>
+
+            </div>
+            <div class="col-1-1">
+                <div class="new-row">
+                    <div class="panelheader">
+                        <label class="label-medlarge">ERROR LOG (BETA)</label>
+                    </div>
+                </div>
+                <div class="new-row">
+                    <textarea class="texteditor-large input-disabled" name="data.buildlog">{{data.data.buildlog}}
+                    </textarea>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+
+        {{!-- cItems Tab --}}
+        <div class="tab citems scrollable" data-group="primary" data-tab="citems">
+            <ol class="properties-list">
+                {{#each data.data.citems as |citem cid|}}
+                <li class="property flexrow" data-item-id="{{cid}}">
+                    <h4 class="property-name">{{citem.name}}</h4>
+                    <div class="property-row">
+                        <a class="property-control citem-edit" title="Edit cItem"><i class="fas fa-edit"></i></a>
+                        <a class="property-control citem-delete" citemid ="{{citem.id}}" ciKey ="{{citem.ciKey}}" title="Delete cItem"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+
+
+
     </section>
 </form>
 
