@@ -1,0 +1,47 @@
+{
+  "Actor": {
+    "types": ["PJ", "PNJ"],
+    "templates": {
+      "base":{
+        "jugador/a": "",
+        "nombre": "",
+        "arquetipo": "",
+        "facción": ""
+      },
+      "atributos":{
+        "fue": {"value":0},
+        "din": {"value":0},
+        "vol": {"value":0},
+        "int": {"value":0},
+        "sue": {"value":0}
+      },
+      "dominios":{
+        "dfis": {"value":0},
+        "dbat": {"value":0},
+        "dsoc": {"value":0},
+        "damb": {"value":0},
+        "docu": {"value":0},
+        "dcon": {"value":0},
+        "dtec": {"value":0},
+        "drec": {"value":0},
+        "ddem": {"value":0},
+        "daur": {"value":0}
+      },
+      "parámetros de combate":{
+        "Salud Física": {"value":0, "max":0},
+        "Resistencia Física": {"value":0},
+        "Salud Mental": {"value":0, "max":0},
+        "Resistencia Mental": {"value":0},
+        "Iniciativa": {"value":0},
+        "Defensa": {"value":0},
+        "Ataque": {"value":0},
+        "Impacto": {"value":0},
+        "Daño Máximo": {"value":0}
+      }
+    },
+    "PJ":{
+      "templates": ["base"]
+    },
+    "PNJ":{}
+  }
+}

@@ -1,0 +1,138 @@
+@font-face {
+    font-family: MinionPro;
+    src:url(fonts/MinionPro-Medium.otf);
+  }
+  @font-face {
+    font-family: SeaPunkUnleashed;
+    src:url(fonts/Sundayscript.ttf);
+  }
+  
+  /* ------------------------------ */
+  
+  /* ------!!!! ------- */
+  /* ---------- DO NOT REMOVE THE ; SEMI COLON PUNTO Y COMA  AT THE END OF EVERY LINE !!! ---- */
+  /* ------!!!! ------- */
+  
+  /* Hoja de personaje y color de la letra */
+  .spu.sheet.window-content {
+    color: #000000; /* Change color code, include the hash tag! */
+    background: url(img/Cielo.png) repeat; 
+    background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+    overflow-y: auto; /* change between hidden and auto to show vertical scroll bar in sheets. Good for long sheets */
+  }
+  
+  /* Control general de la fuente de texto en Foundry */
+  body {
+    font-family: "MinionPro"; /* Dont remove the colon at the end!!! */
+    font-size: 14px; /* Cambia solo el numero! */
+  }
+
+  /* Tabs in sheets! */
+  header.sheet-header {
+    background: url(img/) repeat;
+    background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+  }
+  .spu.sheet .tabs .item{
+    background: url(img/) no-repeat;
+  }
+  
+  /*.spu.sheet .tabs { background-color: #000000; }*/
+  .spu.sheet .tabs .item {
+    font-family: SeaPunkUnleashed, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .spu.sheet .atabs {
+    background-color: black;
+  }
+  
+  /* Fuente y color for Panel Headers */
+  .spu.sheet .panelheader {
+    font-family: SeaPunkUnleashed, sans-serif;
+    font-size: 14px; /* Cambia solo el numero! */
+    background-color: #fff0; /* Background color for panel header */
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  /* Character sheet input text background color fields */
+  .spu.sheet [class^="flexblock-"] input {
+    font-family: MinionPro, sans-serif;
+    font-size: 12px;
+    background-color: #a8b3b300;
+  }
+  
+  /* Character sheet input text in tables (items) */
+  /* You can delete this paragraph if you want it to be same as the input text above */
+  .spu.sheet [class^="flexblock-"] td input {
+    font-family: SeaPunkUnleashed, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    background-color: #a8b3b3;
+  }
+  
+  /* How cItems in tables behave when you move your mouse over!!! */
+  .spu.sheet .linkable:hover {
+      color: #6f1311;
+      font-family: SeaPunkUnleashed, sans-serif; /* Not a good idea to change fonts when passing the mouse but... */
+      font-size: 14px; /* Make it bigger or smaller when mouse over? */
+      font-weight: bold; /* try bold - bolder - normal - lighter */
+  }
+  
+  /* Labels fonts and style */
+  .spu.sheet [class*="label-"] {
+    font-family: SeaPunkUnleashed, sans-serif;
+    font-size: 13px;
+  }
+  
+  /* Character sheet table header colors */
+  .spu.sheet thead {
+    background-color: #606c71;
+  }
+  
+  /* Character sheet empty table cell colors */
+  .spu.sheet tr.empty-row {
+    background-color: #C0C0C0;
+  }
+  
+  /* Table Body background color */
+  tbody.table {
+    background-color: #b8b9bb;
+  }
+  
+  /* Table cells fonts */
+  .spu.sheet td {
+    font-family: SeaPunkUnleashed, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+  }
+  
+  /* ---- NEW Sep-26 ----- */
+  
+  /* Change shadow colors and Foundry general font color!! */
+  .app {
+    box-shadow: 0 0 20px #7e4444; /* Change the color code here for a nice shadow color! */
+    color: #dfdfdf; /* Text color for window titles and menu all across Foundry */
+  }
+  
+  /* Character and Item Name Titles Text style! */
+  .spu.sheet .charname input {
+      color: #191813;
+      font-family: "Signika", sans-serif;
+      font-size: 30px;
+      font-style: normal;
+  }
+  
+  /* Personalizar chat roll area! */
+  #chat-form textarea {
+    /*background: url(img/mapa.png) repeat; /* Replace with some url with image or url in img folder */
+    background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+    font-family: monospace; /* Text font in dice */
+    font-size: 14px; /* Text size in dice dialog */
+    color: rgb(0, 0, 0); /* Text color in dice dialog */
+  }
+  
+  /* Personalizar chat history area! */
+  #chat-log .message {
+    background: url(img/parchment.jpg) repeat; /* Replace with some url with image or url in img folder */
+    color: #000000; /* Text color */
+  }
