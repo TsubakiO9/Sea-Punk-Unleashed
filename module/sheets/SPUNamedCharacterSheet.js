@@ -1,9 +1,9 @@
 // Export document classes.
-export default class SPUActorCharacterSheet extends ActorSheet{
+export default class SPUActorSheet extends ActorSheet{
   static get defaultOptions() {
     return margeObject(super.defaultOptions), {
-      template: "systems/spu/templates/namedCharacter-sheet.html",
-      classes: ["spu", "sheet", "namedCharacter"]
+      template: "systems/spu/templates/actor-sheet.html",
+      classes: ["spu", "sheet", "actor"]
     }
   }
 }
