@@ -14,6 +14,6 @@ Hooks.once('init', function() {
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("spu", SPUItemSheet,{makeDefault: true});
 
-    Actors.unregisterSheet("core", ActorSheet);
-    Actors.registerSheet("spu", SPUNamedCharacterSheet,{makeDefault: true});
+    Actor.unregisterSheet("core", ActorSheet);
+    Actor.registerSheet("spu", SPUNamedCharacterSheet,{makeDefault: true});
 });
