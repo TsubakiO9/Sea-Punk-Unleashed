@@ -6,7 +6,7 @@ import { SPUActorSheet } from "./sheets/SPUActorSheet.js";
 import { SPUItemSheet } from "./sheets/SPUItemSheet.js";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-import { spu } from "./config.js";
+import { spu } from "config.js";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -40,7 +40,7 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-    formula: "1d20 + @abilities.dex.mod",
+    formula: "2d6 + @abilities.dex.mod",
     decimals: 2
   };
 
