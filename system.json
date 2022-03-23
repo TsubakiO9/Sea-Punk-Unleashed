@@ -6,7 +6,7 @@
     "minimumCoreVersion": "9",
     "compatibleCoreVersion":"9",
     "author": "Tsubaki",
-    "esmodules": ["spu.js"],
+    "esmodules": ["module/spu.js"],
     "styles": ["spu.css"],
     "languages": [
       {

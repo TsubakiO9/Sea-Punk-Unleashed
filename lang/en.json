@@ -1,22 +1,22 @@
 {
-  "BOILERPLATE.AbilityStr": "Strength",
-  "BOILERPLATE.AbilityCon": "Constitution",
-  "BOILERPLATE.AbilityDex": "Dexterity",
-  "BOILERPLATE.AbilityInt": "Intelligence",
-  "BOILERPLATE.AbilityWis": "Wisdom",
-  "BOILERPLATE.AbilityCha": "Charisma",
+  "spu.AbilityStr": "Strength",
+  "spu.AbilityCon": "Constitution",
+  "spu.AbilityDex": "Dexterity",
+  "spu.AbilityInt": "Intelligence",
+  "spu.AbilityWis": "Wisdom",
+  "spu.AbilityCha": "Charisma",
 
-  "BOILERPLATE.AbilityStrAbbr": "str",
-  "BOILERPLATE.AbilityConAbbr": "con",
-  "BOILERPLATE.AbilityDexAbbr": "dex",
-  "BOILERPLATE.AbilityIntAbbr": "int",
-  "BOILERPLATE.AbilityWisAbbr": "wis",
-  "BOILERPLATE.AbilityChaAbbr": "cha",
+  "spu.AbilityStrAbbr": "str",
+  "spu.AbilityConAbbr": "con",
+  "spu.AbilityDexAbbr": "dex",
+  "spu.AbilityIntAbbr": "int",
+  "spu.AbilityWisAbbr": "wis",
+  "spu.AbilityChaAbbr": "cha",
 
-  "BOILERPLATE.EffectCreate": "Create Effect",
-  "BOILERPLATE.EffectToggle": "Toggle Effect",
-  "BOILERPLATE.EffectEdit": "Edit Effect",
-  "BOILERPLATE.EffectDelete": "Delete Effect",
+  "spu.EffectCreate": "Create Effect",
+  "spu.EffectToggle": "Toggle Effect",
+  "spu.EffectEdit": "Edit Effect",
+  "spu.EffectDelete": "Delete Effect",
 
-  "BOILERPLATE.Add": "Add"
+  "spu.Add": "Add"
 }
