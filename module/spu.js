@@ -2,11 +2,11 @@
 import { SPUActor } from "./documents/actor.mjs";
 import { SPUItem } from "./documents/item.mjs";
 // Import sheet classes.
-import { SPUActorSheet } from "./module/sheets/SPUActorSheet.js";
-import { SPUItemSheet } from "./module/sheets/SPUItemSheet.js";
+import { SPUActorSheet } from "./sheets/SPUActorSheet.js";
+import { SPUItemSheet } from "./sheets/SPUItemSheet.js";
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-import { spu } from "./module/config.js";
+import { spu } from "./config.js";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
