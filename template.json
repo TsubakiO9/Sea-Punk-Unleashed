@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["PJ", "PNJ"],
+    "types": ["character", "npc"],
     "templates": {
       "base":{
         "jugador/a": "",
@@ -39,10 +39,10 @@
         "Daño Máximo": {"value":0}
       }
     },
-    "PJ":{
+    "character":{
       "templates": ["base"]
     },
-    "PNJ":{}
+    "npc":{}
   },
   "Item":{}
 }
