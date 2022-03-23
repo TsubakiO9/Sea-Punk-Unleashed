@@ -1,5 +1,5 @@
 export const spu = {};
 
-spu. = {
+spu.si = {
     none: "",
 }
