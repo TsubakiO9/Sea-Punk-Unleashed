@@ -21,6 +21,6 @@
     "primaryTokenAttribute": "",
     "secondaryTokenAttribute": "",
     "url": "https://github.com/TsubakiO9/Sea-Punk-Unleashed/",
-    "manifest": "https://github.com/TsubakiO9/Sea-Punk-Unleashed/raw/SPU/main/system.json",
+    "manifest": "https://raw.githubusercontent.com/TsubakiO9/Sea-Punk-Unleashed/SPU/main/system.json",
     "download": "https://github.com/TsubakiO9/Sea-Punk-Unleashed/archive/refs/heads/SPU/main.zip"
   }
